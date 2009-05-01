@@ -1,0 +1,12 @@
+form, fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+input, textarea, select, option, button {
+	font: inherit;
+	margin: 0;
+	width: auto;
+	height: auto;
+}

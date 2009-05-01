@@ -1,0 +1,45 @@
+/* =links
+====================================================================== */
+
+a {
+  color: #3b75b0;
+  border-bottom: 1px solid #b7c8d9;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #8d3cb0;
+  border-bottom-color: #cfb7d9
+}
+
+a:hover,
+a:focus {
+  color: #fff;
+  background-color: #3b75b0;
+  border-bottom-color: #3b75b0;
+}
+
+a:visited:hover,
+a:visited:focus {
+  background-color: #8d3cb0;
+  border-bottom-color: #8d3cb0;
+}
+
+a:visited:active,
+a:active {
+  color: #eee;
+  background-color: #333;
+  border-bottom-color: #333;
+}
+
+a.cancel {
+  color: #b03c3c;
+  border-bottom-color: #d9b7b7;
+}
+
+a.cancel:hover,
+a.cancel:focus {
+  color: #fff;
+  background-color: #b03c3c;
+  border-bottom-color: #b03c3c;
+}

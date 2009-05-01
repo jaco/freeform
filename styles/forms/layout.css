@@ -1,0 +1,246 @@
+/* =fieldsets
+====================================================================== */
+
+fieldset {
+	overflow: hidden; /* workaround for `width: 100%` on `fieldset.grid > div` */
+}
+
+fieldset legend {
+	padding-bottom: 0.5em;
+}
+
+fieldset.set {
+  padding: 1em;
+}
+
+fieldset.set legend {
+	padding-bottom: 0;
+}
+
+fieldset.nolegend legend {
+  display: none;
+}
+
+/* =block
+====================================================================== */
+
+fieldset.block > div,
+fieldset > div.block,
+div.column.block > div,
+div.column > div.block {
+	margin-top: 0.5em;
+}
+
+fieldset.block > div:first-child,
+fieldset.block > legend + div,
+fieldset > div.block:first-child,
+fieldset > legend + div.block,
+div.column.block > div:first-child,
+div.column.block > legend + div,
+div.column > div.block:first-child,
+div.column > legend + div.block {
+	margin-top: 0;
+}
+
+fieldset.block > div > label,
+fieldset > div.block > label,
+div.column.block > div > label,
+div.column > div.block > label {
+	display: block;
+	padding-bottom: 0.25em;
+}
+
+fieldset.block > div > div.field input[type="text"],
+fieldset.block > div > div.field input[type="password"],
+fieldset.block > div > div.field select,
+fieldset.block > div > div.field textarea,
+fieldset > div.block > div.field input[type="text"],
+fieldset > div.block > div.field input[type="password"],
+fieldset > div.block > div.field select,
+fieldset > div.block > div.field textarea,
+div.column.block > div > div.field input[type="text"],   
+div.column.block > div > div.field input[type="password"],
+div.column.block > div > div.field select,
+div.column.block > div > div.field textarea,
+div.column > div.block > div.field input[type="text"],   
+div.column > div.block > div.field input[type="password"],
+div.column > div.block > div.field select,               
+div.column > div.block > div.field textarea {
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* =grid
+====================================================================== */
+
+fieldset.grid > div,
+fieldset > div.grid,
+div.column.grid > div,
+div.column > div.grid {
+	display: table;
+	margin-top: 0.5em;
+	width: 100%;
+}
+
+fieldset.grid > div > label,
+fieldset > div.grid > label,
+div.column.grid > div > label,
+div.column > div.grid > label {
+	padding-right: 1ex;
+}
+
+fieldset.grid > div:first-child,
+fieldset.grid > legend + div,
+fieldset > div.grid:first-child,
+fieldset > legend + div.grid,
+div.column.grid > div:first-child,
+div.column.grid > legend + div,
+div.column > div.grid:first-child,
+div.column > legend + div.grid {
+	margin-top: 0;
+}
+
+fieldset.grid > div > label,
+fieldset.grid > div > div.field,
+fieldset.grid > div > div.fields,
+div.column.grid > div > label,
+div.column.grid > div > div.field,
+div.column.grid > div > div.fields,
+fieldset > div.grid > label,
+fieldset > div.grid > div.field, 
+fieldset > div.grid > div.fields,
+div.column > div.grid > label,
+div.column > div.grid > div.field, 
+div.column > div.grid > div.fields {
+	display: table-cell;
+}
+
+label.noalign {
+	vertical-align: top !important;
+}
+
+fieldset.grid > div > label,
+fieldset > div.grid > label,
+div.column.grid > div > label,
+div.column > div.grid > label {
+	width: 25%;
+}
+
+fieldset.grid > div > div.field,
+fieldset.grid > div > div.fields,
+fieldset > div.grid > div.field,
+fieldset > div.grid > div.fields,
+div.column.grid > div > div.field,
+div.column.grid > div > div.fields,
+div.column > div.grid > div.field,
+div.column > div.grid > div.fields {
+	width: 75%;
+}
+
+.grid > div > div.field input[type="text"],
+.grid > div > div.field input[type="password"],
+.grid > div > div.field textarea,
+.grid > div > div.field select,
+fieldset > .grid > div.field input[type="text"],
+fieldset > .grid > div.field input[type="password"],
+fieldset > .grid > div.field textarea,
+fieldset > .grid > div.field select {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.grid > div > div.field > textarea,
+fieldset > .grid > div.field > textarea {
+	width: 100% !important;
+}
+
+/* =style-separated
+====================================================================== */
+
+fieldset.separated.block > div,
+fieldset.separated > div.block,
+div.column.block.separated > div,
+div.column.separated > div.block,
+fieldset.grid.separated > div,
+fieldset.separated > div.grid,
+div.column.grid.separated > div,
+div.column.separated > div.grid {
+	padding-top: 0.5em;
+}
+
+fieldset.block.separated > div:first-child,
+fieldset.block.separated > legend + div,
+fieldset.separated > div.block:first-child,
+fieldset.separated > legend + div.block,
+div.column.block.separated > div:first-child,
+div.column.block.separated > legend + div,
+div.column.separated > div.block:first-child,
+div.column.separated > legend + div.block,
+fieldset.grid.separated > div:first-child,
+fieldset.grid.separated > legend + div,
+fieldset.separated > div.grid:first-child,
+fieldset.separated > legend + div.grid,
+div.column.grid.separated > div:first-child,
+div.column.grid.separated > legend + div,
+div.column.separated > div.grid:first-child,
+div.column.separated > legend + div.grid {
+	padding-top: 0;
+	border-top: none;
+}
+
+/* =nolabel
+====================================================================== */
+
+.grid > div.nolabel > div.field,
+.grid > div.nolabel > div.fields,
+fieldset > .grid.nolabel > div.field,
+fieldset > .grid.nolabel > div.fields {
+	padding-left: 25%;
+}
+
+/* =columns
+====================================================================== */
+
+.columns > .primary,
+.columns > .secondary {
+	float: left;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.columns.equal > .primary,
+.columns.equal > .secondary {
+	width: 50%;
+}
+
+.columns.equal > .primary {
+	padding-right: 0.5em;
+}
+
+.columns.equal > .secondary {
+	padding-left: 0.5em;
+}
+
+div.column.grid,
+div.column.block {
+	margin-top: 0 !important;
+	display: block !important;
+}
+
+/* =validation
+====================================================================== */
+
+p.description,
+p.message {
+	margin-top: 0.5em;
+}
+
+p.description + p.message,
+p.message + p.message {
+	margin-top: 0;
+}

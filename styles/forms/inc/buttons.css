@@ -1,0 +1,74 @@
+/* =buttons
+====================================================================== */
+
+a.button {
+  border-bottom: 0;
+  padding: 0.25em;
+  float: left;
+  margin: 0 0.5em 0.5em 0;
+}
+
+a.button,
+a.button:visited {
+  background-color: #ccc;
+  color: #222;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #bbb #888 #888 #bbb;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  outline: 0;
+}
+
+a.button:hover,
+a.button:focus {
+  background-color: #ddd;
+}
+
+a.button:active {
+  color: #222;
+  background-color: #bbb;
+  border-color: #888 #bbb #bbb #888;
+}
+
+a.button-icon {
+  padding-left: 23px;
+  background-repeat: no-repeat;
+  background-image: url("icons.png");
+  background-position: 4px 1000px;
+}
+
+a.button-icon.add {
+  background-position: 4px 4px;
+}
+
+a.button-icon.ok {
+  background-position: 4px -22px;
+}
+
+a.button-icon.del {
+  background-position: 4px -48px;
+}
+
+a.button-icon.cancel {
+  background-position: 4px -74px;
+}
+
+a.button-icon.edit {
+  background-position: 4px -100px;
+}
+
+.button-container:after {
+  content: "";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+
+form > .button-container a.button {
+  float: none;
+  display: block;
+  margin-right: 0;
+}

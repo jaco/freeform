@@ -1,0 +1,84 @@
+@import url("inc/links.css");
+@import url("inc/buttons.css");
+
+/* =fieldsets
+====================================================================== */
+
+fieldset {
+	background-color: #fff;
+}
+
+fieldset legend {
+	font-weight: bold;
+}
+
+fieldset.set {
+  border: 1px solid #ddd;
+}
+
+fieldset.set legend {
+  color: #aaa;
+	font-weight: normal;
+}
+
+/* =separated
+====================================================================== */
+
+fieldset.separated.block > div,
+fieldset.separated > div.block,
+div.column.block.separated > div,
+div.column.separated > div.block,
+fieldset.grid.separated > div,
+fieldset.separated > div.grid,
+div.column.grid.separated > div,
+div.column.separated > div.grid {
+	border-top: 1px solid #ddd;
+}
+
+/* =validation
+====================================================================== */
+
+label span.required {
+	color: #999;
+}
+
+p.description,
+p.message {
+	font-size: 0.75em;
+}
+
+p.description {
+	color: #aaa;
+}
+
+div.error label,
+div.error p.message {
+	color: #d00;
+}
+
+div.error p.message {
+	font-weight: bold;
+}
+
+/* =inline labels
+====================================================================== */
+
+.fields label[for],
+.fields label[for] input[type="checkbox"],
+.fields label[for] input[type="radio"] {
+	cursor: pointer;
+}
+
+label.disabled,
+label.disabled input[type="checkbox"],
+label.disabled input[type="radio"] {
+	color: #b7b7b7;
+	cursor: default;
+}
+
+input[type="submit"],
+input[type="image"],
+input[type="button"],
+button {
+	cursor: pointer;
+}

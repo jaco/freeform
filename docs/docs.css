@@ -1,0 +1,197 @@
+/* =reset
+====================================================================== */
+
+html, body, div, 
+p, blockquote, address,
+ul, ol, li, dl, dt, dd,
+h1, h2, h3, h4, h5, h6,
+a, strong, em, cite, q, dfn, 
+pre, code, samp, kbd, var,
+hr, img, object {
+	border: 0;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+body {
+	line-height: 1;
+}
+
+/* =document
+====================================================================== */
+
+body {
+	font-size: 14px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", LucidaGrande, "Lucida Sans", Geneva, Verdana, sans-serif;
+/*	background: url("baseline-21.png");*/
+	line-height: 21px;
+	width: 45em;
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 21px 21px 0;
+}
+
+/* =global
+====================================================================== */
+
+p, blockquote, ul, ol, dl, pre {
+	margin-bottom: 21px;
+	line-height: 21px;
+}
+
+.example {
+	border: 1px outset #90ba9e;
+	padding: 20px 20px;
+	margin-bottom: 21px;
+}
+
+h2 + p,
+h2 + blockquote,
+h2 + ul,
+h2 + ol,
+h2 + dl,
+h2 + pre {
+	margin-top: 21px;
+}
+
+/* =lists
+====================================================================== */
+
+ul ul, ul ol, ol ol, ol ul {
+	margin-bottom: 0;
+}
+
+li {
+	margin-left: 0;
+}
+
+li li {
+	margin-left: 21px;
+}
+
+/* =headings
+====================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Helvetica Neue", Arial, Tahoma, Verdana, Geneva, sans-serif;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 36px;
+	line-height: 42px;
+}
+
+h2 {
+	font-size: 28px;
+	line-height: 40px;
+	background-color: #ddd;
+	border-bottom: 2px solid #aaa;
+	color: #333;
+}
+
+h3 {
+	font-size: 24px;
+	line-height: 42px;
+	font-variant: small-caps;
+	text-transform: lowercase;
+}
+
+h4 {
+	font-size: 21px;
+	line-height: 20px;
+	margin-bottom: 21px;
+	font-variant: small-caps;
+	text-transform: lowercase;
+	border-bottom: 1px solid #999;
+	text-align: right;
+	color: #666;
+}
+
+/* =inline
+====================================================================== */
+
+code, samp, kbd, var {
+	font-family: Monaco, "Lucida Console", "Courier New", Courier;
+	background-color: #0a2f1f;
+	color: #90ba9e;
+}
+
+a, strong, em, cite, q, dfn, code, samp, kbd, var {
+	line-height: 21px;
+	vertical-align: top
+}
+
+strong {
+	font-weight: bold;
+}
+
+em, dfn, cite, q {
+	font-style: italic;
+}
+
+a {
+	color: green;
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+	background-color: green;
+	color: white;
+}
+
+a[href^="http://"] {
+	color: blue;
+}
+
+a[href^="http://"]:hover,
+a[href^="http://"]:focus {
+	background-color: blue;
+	color: white;
+}
+
+/* =other
+====================================================================== */
+
+pre code {
+	display: block;
+	border: 1px solid #111;
+	background-color: #0a2f1f;
+	color: #90ba9e;
+	padding: 20px;
+}
+
+pre ins {
+	color: #9cf29e;
+	text-decoration: none;
+}
+
+pre .param,
+code.param {
+	color: #f9ed97;
+}
+
+pre .highlight {
+	display: block;
+	background-color: #235031;
+}
+
+.warning {
+	color: #b00;
+	background-color: #fcc;
+}
+
+.comment {
+	color: #2a5d3b;
+}
+
+hr {
+	height: 1px;
+	background-color: #999;
+	margin-bottom: 20px;
+}

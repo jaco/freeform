@@ -1,0 +1,28 @@
+/* =collapse
+====================================================================== */
+
+fieldset.collapse {
+  position: relative;
+}
+
+fieldset.collapse a.cancel-fieldset {
+  position: absolute;
+  background-color: #fff;
+  right: 1em;
+  top: 0;
+  -moz-binding: url(bindings.xml#fieldset);
+}
+
+fieldset.collapse a.mozilla-cancel-fieldset {
+  right: 1.5em;
+  top: -2.25em;
+}
+
+fieldset.collapse a.cancel-submit {
+  margin-left: 1ex;
+}
+
+fieldset.collapse a.cancel-fieldset:hover,
+fieldset.collapse a.cancel-fieldset:focus {
+  background-color: #b03c3c;
+}

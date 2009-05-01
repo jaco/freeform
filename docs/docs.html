@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>Forms Framework</title>
+		<link rel="stylesheet" href="docs.css" type="text/css" />
+		<link rel="stylesheet" href="../styles/forms.css" type="text/css" />
+	</head>
+	<body>
+		
+		<div id="baseline"></div>
+		
+		<h1>Forms Framework Documentation</h1>
+		<p>Version: 0.1<br />
+		Last revision: 2009-03-13</p>
+		
+		<ul>
+			<li><a href="#scope">Scope</a></li>
+			<li><a href="#structure">Structure</a>
+				<ul>
+					<li><a href="#struc-basic">Basic</a></li>
+				</ul>
+			</li>
+			<li><a href="#visual-style">Visual Style</a>
+				<ul>
+					<li><a href="#layouts">Layouts</a>
+						<ul>
+							<li><a href="#layout-block">Block</a></li>
+							<li><a href="#layout-grid">Grid</a></li>
+						</ul>
+					</li>
+					<li><a href="#presentation">Presentation</a></li>
+				</ul>
+			</li>
+		</ul>
+
+		<h2 id="scope">Scope</h2>
+		
+		<p>Framework targets every <code>form</code> element in the document. However, <a href="#layouts">layouts</a> and <a href="#presentation">presentation layers</a> are triggered by class names.</p>
+
+		<h2 id="structure">Structure</h2>
+		
+		<h3 id="struc-basic">Basic</h3>
+		
+		<p>Basic structure of the form looks like this (commented):</p>
+		
+<pre><code>&lt;form action=&quot;&quot; method=&quot;post&quot;&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;&lt;/legend&gt;
+
+  &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+
+		<p>The form is defined by <code>&lt;form&gt;</code> + <code>&lt;fieldset&gt;</code> elements. Inside there’s a <code>&lt;legend&gt;</code> element describing what the form does.</p>
+		
+		<h3 id="struc-cell">Form cell</h3>
+		
+		<pre><code>&lt;form action=&quot;&quot; method=&quot;post&quot;&gt;
+  &lt;fieldset <ins>class=&quot;<span class="param">{parameters}</span>&quot;</ins>&gt;
+    &lt;legend&gt;&lt;/legend&gt;
+<span class="highlight">    &lt;div <ins>class="<span class="param">{type}</span>"</ins>&gt;
+
+    &lt;/div&gt;
+</span>  &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+		
+
+		<p>The hightlighted snippet defines the area for field and its label. It will be referenced as <dfn>cell</dfn>.</p>
+		
+		<h4>Class Names</h4>
+		
+		<ol>
+			<li><code class="param">{parameters}</code> is used to trigger visual changes in form and switch layout for cells globally.</li>
+			<li><code class="param">{type}</code> declared the type of layout used for this specific cell.</li>
+		</ol>
+		
+		<p class="warning">Layout can be declared only in one place – use <code>&lt;fieldset&gt;</code> to apply one layout globally or declare it for each <dfn>cell</dfn>.</p>
+		
+		<h2 id="visual-style">Visual style</h2>
+		
+		<h3 id="vstyle-set">Set</h3>
+		
+		<div class="example">
+			<fieldset class="set">
+				<legend>Legend</legend>
+			</fieldset>
+		</div>
+		
+		<p>Outlines form with border and adds padding.</p>
+		
+		<pre><code>&lt;fieldset class=&quot;<ins>set</ins>&quot;&gt;
+  &lt;legend&gt;Legend&lt;/legend&gt;
+  &lt;p&gt;Content&lt;/p&gt;
+&lt;/fieldset&gt;</code></pre>
+
+		<h3 id="vstyle-nolegend">No legend</h3>
+		
+		<p>Hides legend from view, while allowing adding semantics to HTML.</p>
+		
+		<pre><code>&lt;fieldset class=&quot;<ins>nolegend</ins>&quot;&gt;
+  &lt;legend&gt;Legend&lt;/legend&gt;
+&lt;/fieldset&gt;</code></pre>
+		
+		<h3 id="vstyle-separated-block">Separated block</h3>
+		
+		<div class="example">
+			<fieldset class="separated block">
+				<legend>Legend</legend>
+				<div>
+					<label for="form-name">Text field</label>
+					<div class="field">
+						<input type="text" />
+					</div>
+				</div>
+				<div>
+					<label for="">Select field</label>
+					<div class="field">
+						<select>
+							<option>Option</option>
+						</select>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+		
+		<p>Splits each <dfn>cell</dfn> with border and some margin.</p>
+		
+		<p class="warning">Works only when layout is specified</p>
+		
+		<pre><code>&lt;fieldset class=&quot;<ins>separated block</ins>&quot;&gt;
+  &lt;legend&gt;Legend&lt;/legend&gt;
+  <span class="comment">&lt;!-- form fields --&gt;</span>
+&lt;/fieldset&gt;</code></pre>
+
+		<h3 id="vstyle-separated-grid">Separated grid</h3>
+		
+		<div class="example">
+			<fieldset class="separated grid">
+				<legend>Legend</legend>
+				<div>
+					<label for="form-name">Text field</label>
+					<div class="field">
+						<input type="text" />
+					</div>
+				</div>
+				<div>
+					<label for="">Select field</label>
+					<div class="field">
+						<select>
+							<option>Option</option>
+						</select>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+		
+		<p>Splits each <dfn>cell</dfn> with border and some margin.</p>
+		
+		<p class="warning">Works only when layout is specified</p>
+		
+		<pre><code>&lt;fieldset class=&quot;<ins>separated grid</ins>&quot;&gt;
+  &lt;legend&gt;Legend&lt;/legend&gt;
+  <span class="comment">&lt;!-- form fields --&gt;</span>	
+&lt;/fieldset&gt;</code></pre>
+
+		<h3 id="vstyle-">No label</h3>
+		
+		<div class="example">
+			<form action="" method="post">
+				<fieldset class="separated grid nolegend">
+					<legend>Legend</legend>
+					<div>
+						<label for="form-name">Text field</label>
+						<div class="field">
+							<input type="text" />
+						</div>
+					</div>
+					<div class="nolabel">
+						<div class="field">
+							<input type="text" value="without label" />
+						</div>
+					</div>
+					<div class="nolabel">
+						<div class="field">
+							<input type="submit" value="Button" />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		
+		<p class="warning">Works only when applied on a form with <code>grid</code> layout.</p>
+		
+		<pre><code>&lt;fieldset class=&quot;<ins>separated grid</ins>&quot;&gt;
+  &lt;legend&gt;Legend&lt;/legend&gt;
+<span class="highlight">  &lt;div class=&quot;<span class="param">nolabel</span>&quot;&gt;
+    &lt;div class=&quot;field&quot;&gt;
+      &lt;input type=&quot;text&quot; value=&quot;without label&quot; /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</span>&lt;/fieldset&gt;</code></pre>
+
+		<h3 id="vstyle-combined">Combining styles</h3>
+		
+		<p>This the look of form with <code>set separated grid</code> class names.</p>
+		
+		<div class="example">
+			<fieldset class="set separated grid">
+				<legend>Legend</legend>
+				<div>
+					<label for="form-name">Text field</label>
+					<div class="field">
+						<input type="text" />
+					</div>
+				</div>
+				<div>
+					<label for="">Select field</label>
+					<div class="field">
+						<select>
+							<option>Option</option>
+						</select>
+					</div>
+				</div>
+				<div class="nolabel">
+					<div class="fields">
+						<label for="vstyle-combined-1"><input id="vstyle-combined-1" type="checkbox" /> Checkbox</label>
+					</div>
+				</div>
+				<div class="nolabel">
+					<div class="fields">
+						<input type="submit" value="Button" />
+					</div>
+				</div>
+			</fieldset>
+		</div>
+
+
+		<h2 id="layouts">Layouts</h2>
+		
+		<p>Form layout can be <a href="http://google.pl">organized</a> in two ways – fields can be arranged to be displayed line after line or in a grid-like layout</p>
+		
+		<h4 id="layout-block">Block</h4>
+		
+		<p>Example:</p>
+		
+	</body>
+</html>

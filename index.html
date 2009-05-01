@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>Forms 2</title>
+		<link rel="stylesheet" href="styles/forms.css" type="text/css" />
+		<link rel="stylesheet" href="styles/demo/screen.css" type="text/css" />
+		<script src="scripts/jquery.js" type="text/javascript"></script>
+		<script src="scripts/l18n.js" type="text/javascript"></script>
+		<script src="scripts/forms.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<!-- <div id="ruler"></div> -->
+		
+		<form action="" method="post">
+			<fieldset class="set grid separated">
+				<legend>Abracadabra</legend>
+				<div>
+					<label for="form-name">One <span class="required" title="Required">*</span></label>
+					<div class="field">
+						<input class="required" type="text" id="form-name" name="form-name" value="" />
+					</div>
+				</div>
+				<div>
+					<label for="form-password">Password</label>
+					<div class="field">
+						<input type="password" id="form-password" name="form-password" value="" />
+					</div>
+				</div>
+				<div>
+					<label for="">Click</label>
+					<div class="field">
+						<select>
+							<option>select</option>
+							<option>select</option>
+							<option>select</option>
+							<option>select</option>
+						</select>
+					</div>
+				</div>
+				<div>
+					<label>Something</label>
+					<div class="fields">
+						<label for=""><input type="checkbox" checked="" /> checkbox</label>
+						<label for="" class="disabled"><input type="checkbox" checked="" disabled="disabled" /> disabled checkbox</label>
+					</div>
+				</div>
+				<div>
+					<label>Something</label>
+					<div class="fields">
+						<label for=""><input type="radio" /> radiobutton</label>
+						<label for="" class="disabled"><input type="radio" disabled="disabled" /> disabled radiobutton</label>
+					</div>
+				</div>
+				<div>
+					<label for="">Bla bla</label>
+					<div class="fields">
+						<input type="text" value="" size="10" /> 
+						<input type="text" value="" size="4" />
+					</div>
+				</div>
+				<div class="block">
+					<label class="noalign" for="">Textarea</label>
+					<div class="field">
+						<textarea id="" name="" rows="8" cols="40"></textarea>
+					</div>
+				</div>
+				<div class="nolabel">
+					<div class="field">
+						<input type="text" value="without label" />
+					</div>
+				</div>
+				<div class="nolabel">
+					<div class="field">
+						<input type="submit" value="Submit" />
+					</div>
+				</div>
+			</fieldset><!-- grid -->
+		</form>
+		
+		<br /><br /><br /><br /><br />
+		
+		<form action="" method="post">
+			<fieldset class="grid separated">
+				<legend>Legend</legend>
+				<div>
+					<label for="form-name">Text field</label>
+					<div class="field">
+						<input class="required" type="text" id="form-name" name="form-name" value="" />
+					</div>
+				</div>
+				<div>
+					<label for="">Select field</label>
+					<div class="field">
+						<select>
+							<option>select</option>
+							<option>select</option>
+							<option>select</option>
+							<option>select</option>
+						</select>
+					</div>
+				</div>
+				<div>
+					<div class="field">
+						<input type="submit" value="Submit" />
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	
+	</body>
+</html>
