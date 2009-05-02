@@ -3,7 +3,7 @@ var L18n = {
     'cancel': 'Cancel',
     'select_max': 'Select no more than {0} fields.',
     'select_min': 'Select no less than {0} fields.',
-		'empty_field_not_allowed': 'The field cannot be empty'
+		'empty_field_not_allowed': 'Field cannot be empty'
   },
   'pl-PL': {
     'cancel': 'Anuluj',

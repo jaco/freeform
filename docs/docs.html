@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-		<title>Forms Framework</title>
+		<title>Freeform Docs</title>
 		<link rel="stylesheet" href="docs.css" type="text/css" />
 		<link rel="stylesheet" href="../styles/forms.css" type="text/css" />
 	</head>
@@ -11,33 +11,13 @@
 		
 		<div id="baseline"></div>
 		
-		<h1>Forms Framework Documentation</h1>
+		<h1>Freeform Documentation</h1>
 		<p>Version: 0.1<br />
-		Last revision: 2009-03-13</p>
+		Last revision: 2009-05-02</p>
 		
-		<ul>
-			<li><a href="#scope">Scope</a></li>
-			<li><a href="#structure">Structure</a>
-				<ul>
-					<li><a href="#struc-basic">Basic</a></li>
-				</ul>
-			</li>
-			<li><a href="#visual-style">Visual Style</a>
-				<ul>
-					<li><a href="#layouts">Layouts</a>
-						<ul>
-							<li><a href="#layout-block">Block</a></li>
-							<li><a href="#layout-grid">Grid</a></li>
-						</ul>
-					</li>
-					<li><a href="#presentation">Presentation</a></li>
-				</ul>
-			</li>
-		</ul>
-
 		<h2 id="scope">Scope</h2>
 		
-		<p>Framework targets every <code>form</code> element in the document. However, <a href="#layouts">layouts</a> and <a href="#presentation">presentation layers</a> are triggered by class names.</p>
+		<p>Framework targets every <code>form</code> element in the document. However, <a href="#layouts">layouts</a> and <a href="#visual-style">presentation layers</a> are triggered by class names.</p>
 
 		<h2 id="structure">Structure</h2>
 		
@@ -76,6 +56,181 @@
 		</ol>
 		
 		<p class="warning">Layout can be declared only in one place – use <code>&lt;fieldset&gt;</code> to apply one layout globally or declare it for each <dfn>cell</dfn>.</p>
+		
+		<h3 id="struc-insidecell">Inside cell</h3>
+		
+		<p>Code for almost all cells looks like this:</p>
+		
+		<pre><code>&lt;div <ins>class="<span class="param">{type}</span>"</ins>&gt;
+<span class="highlight">  &lt;label for=&quot;screenname&quot;&gt;Screenname&lt;/label&gt;
+  &lt;div class=&quot;<ins>field</ins>&quot;&gt;
+    &lt;input type=&quot;text&quot; id=&quot;screenname&quot; /&gt;
+  &lt;/div&gt;
+</span>&lt;/div&gt;</code></pre>
+
+    <p>Here we use a single text field with corresponding label, bound together by <code>for</code> and <code>id</code> attributes.</p>
+    
+    <p>Div element inside holds only one text field, so its classname is <code>field</code>. It will stretch field to 100% of container. To put a few fields near each other, use <code>fields</code> classname.</p>
+    
+    		<pre><code>&lt;div <ins>class="<span class="param">{type}</span>"</ins>&gt;
+  &lt;label for=&quot;screenname&quot;&gt;Screenname&lt;/label&gt;
+<span class="highlight">  &lt;div class=&quot;<ins>fields</ins>&quot;&gt;
+    &lt;input type=&quot;text&quot; id=&quot;screenname&quot; size=&quot;20&quot; /&gt;
+    &lt;input type=&quot;text&quot; id=&quot;email&quot; size=&quot;15&quot; /&gt;
+  &lt;/div&gt;
+</span>&lt;/div&gt;</code></pre>
+
+    <h2 id="layouts">Layouts</h2>
+
+    <p>Form layout can be organized in two ways – fields can be arranged to be displayed line after line or in a grid-like layout</p>
+
+    <h3 id="layout-block">Block</h3>
+    
+    <div class="example">
+			<form action="" method="post">
+  			<fieldset class="block">
+  				<div>
+  				  <label>Comment</label>
+  				  <div class="field">
+  				    <textarea rows="5" cols="40"></textarea>
+  				  </div>
+  				</div>
+  			  <div>
+  				  <label>Name</label>
+  				  <div class="field">
+  				    <input type="text" />
+  				  </div>
+  				</div>
+  				<div>
+  				  <label>Email</label>
+  				  <div class="field">
+  				    <input type="text" />
+  				  </div>
+  				</div>
+  			</fieldset>
+			</form>
+		</div>
+		
+		<pre><code>&lt;fieldset class=&quot;<span class="param">block</span>&quot;&gt;
+  &lt;div&gt;
+    &lt;label &gt;Comment&lt;/label&gt;
+    &lt;div class=&quot;field&quot;&gt;
+      &lt;textarea rows=&quot;5&quot; cols=&quot;40&quot;&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label&gt;Name&lt;/label&gt;
+    &lt;div class=&quot;field&quot;&gt;
+      &lt;input type=&quot;text&quot; /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label&gt;Email&lt;/label&gt;
+    &lt;div class=&quot;field&quot;&gt;
+      &lt;input type=&quot;text&quot; /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+		
+		<h3 id="layout-grid">Grid</h3>
+		
+		<div class="example">
+			<form action="" method="post">
+  			<fieldset class="grid">
+  				<div>
+  				  <label class="noalign">Comment</label>
+  				  <div class="field">
+  				    <textarea rows="5" cols="40"></textarea>
+  				  </div>
+  				</div>
+  			  <div>
+  				  <label>Name</label>
+  				  <div class="field">
+  				    <input type="text" />
+  				  </div>
+  				</div>
+  				<div>
+  				  <label>Email</label>
+  				  <div class="field">
+  				    <input type="text" />
+  				  </div>
+  				</div>
+  			</fieldset>
+			</form>
+		</div>
+		
+		<pre><code>&lt;fieldset class=&quot;<span class="param">grid</span>&quot;&gt;
+  &lt;div&gt;
+    &lt;label <ins>class=&quot;noalign&quot;</ins>&gt;Comment&lt;/label&gt;
+    &lt;div class=&quot;field&quot;&gt;
+      &lt;textarea rows=&quot;5&quot; cols=&quot;40&quot;&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label&gt;Name&lt;/label&gt;
+    &lt;div class=&quot;field&quot;&gt;
+      &lt;input type=&quot;text&quot; /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label&gt;Email&lt;/label&gt;
+    &lt;div class=&quot;field&quot;&gt;
+      &lt;input type=&quot;text&quot; /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+		
+		<p>Default width of grid layout is split 25% for label, 75% for field(s). It’s possible to overwrite those values.</p>
+		
+		<h3 id="layout-grid">Mixed</h3>
+		
+		<p>In examples above, layout was specified by adding classname globally, to <code>fieldset</code> element. It’s possible to mix layouts by using class names for each cell.</p>
+		
+		<div class="example">
+			<form action="" method="post">
+  			<fieldset>
+  				<div class="block">
+  				  <label class="noalign">Comment</label>
+  				  <div class="field">
+  				    <textarea rows="5" cols="40"></textarea>
+  				  </div>
+  				</div>
+  			  <div class="grid">
+  				  <label>Name</label>
+  				  <div class="field">
+  				    <input type="text" />
+  				  </div>
+  				</div>
+  				<div class="grid">
+  				  <label>Email</label>
+  				  <div class="field">
+  				    <input type="text" />
+  				  </div>
+  				</div>
+  			</fieldset>
+			</form>
+		</div>
+		
+    <pre><code>&lt;fieldset&gt;
+  &lt;div class=&quot;<span class="param">block</span>&quot;&gt;
+    &lt;label class=&quot;noalign&quot;&gt;Comment&lt;/label&gt;
+    &lt;div class=&quot;field&quot;&gt;
+      &lt;textarea rows=&quot;5&quot; cols=&quot;40&quot;&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;<span class="param">grid</span>&quot;&gt;
+    &lt;label&gt;Name&lt;/label&gt;
+    &lt;div class=&quot;field&quot;&gt;
+      &lt;input type=&quot;text&quot; /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;<span class="param">grid</span>&quot;&gt;
+    &lt;label&gt;Email&lt;/label&gt;
+    &lt;div class=&quot;field&quot;&gt;
+      &lt;input type=&quot;text&quot; /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
 		
 		<h2 id="visual-style">Visual style</h2>
 		
@@ -234,15 +389,6 @@
 				</div>
 			</fieldset>
 		</div>
-
-
-		<h2 id="layouts">Layouts</h2>
-		
-		<p>Form layout can be <a href="http://google.pl">organized</a> in two ways – fields can be arranged to be displayed line after line or in a grid-like layout</p>
-		
-		<h4 id="layout-block">Block</h4>
-		
-		<p>Example:</p>
 		
 	</body>
 </html>

@@ -1,10 +1,6 @@
 /* =fieldsets
 ====================================================================== */
 
-fieldset {
-	overflow: hidden; /* workaround for `width: 100%` on `fieldset.grid > div` */
-}
-
 fieldset legend {
 	padding-bottom: 0.5em;
 }
