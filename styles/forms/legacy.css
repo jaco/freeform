@@ -1,0 +1,22 @@
+/* stylesheet for browsers without display:table/table-cell support */
+
+fieldset.grid > div,
+fieldset > div.grid,
+div.column.grid > div,
+div.column > div.grid {
+  width: 100%;
+}
+
+.grid > label,
+.grid > div > label {
+	padding-right: 0;
+}
+
+.grid > label,
+.grid > div.field,
+.grid > div.fields
+.grid > div > label,
+.grid > div > div.field,
+.grid > div > div.fields {
+  float: left;
+}
