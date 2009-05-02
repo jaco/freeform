@@ -1,3 +1,5 @@
+/* reset only for form elements */
+
 form, fieldset {
 	margin: 0;
 	padding: 0;

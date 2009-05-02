@@ -1,3 +1,5 @@
+// this will probably evolve into another framework
+
 var Forms = {
 	
 	lang: 'en-US',	
@@ -52,7 +54,7 @@ var Forms = {
 					error: false,
 					field: this,
 					messages: []
-				}
+				};
 				
 				if (is_required && is_empty) {
 					error_stack.error = true;
@@ -75,8 +77,8 @@ var Forms = {
 			}
 		});
 	}
-}
+};
 
 $(function() {
 	Forms.start();
-})
+});

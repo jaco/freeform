@@ -1,5 +1,7 @@
+/*
 @import url("inc/links.css");
 @import url("inc/buttons.css");
+*/
 
 /* =fieldsets
 ====================================================================== */
@@ -26,38 +28,9 @@ fieldset.set legend {
 
 fieldset.separated.block > div,
 fieldset.separated > div.block,
-div.column.block.separated > div,
-div.column.separated > div.block,
 fieldset.grid.separated > div,
-fieldset.separated > div.grid,
-div.column.grid.separated > div,
-div.column.separated > div.grid {
+fieldset.separated > div.grid {
 	border-top: 1px solid #ddd;
-}
-
-/* =validation
-====================================================================== */
-
-label span.required {
-	color: #999;
-}
-
-p.description,
-p.message {
-	font-size: 0.75em;
-}
-
-p.description {
-	color: #aaa;
-}
-
-div.error label,
-div.error p.message {
-	color: #d00;
-}
-
-div.error p.message {
-	font-weight: bold;
 }
 
 /* =inline labels
